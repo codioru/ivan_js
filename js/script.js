@@ -22,28 +22,22 @@
 Проверить, чтобы все работало без ошибок в консоли */
 
 'use strict';
-let latestFilm,
-    estimationFilm;
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '1');
-latestFilm = prompt('Один из последних просмотренных фильмов?', '1');
-estimationFilm = prompt('На сколько оцените его? от 1 до 5', '0');
 
-console.log(numberOfFilms, latestFilm, estimationFilm);
-const movies = {},
-    actors = {},
-    genres = [];
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '1');
+const latestFilm1 = prompt('Один из последних просмотренных фильмов?', ''),
+    estimationFilm1 = prompt('На сколько оцените его?', ''),
+    latestFilm2 = prompt('Один из последних просмотренных фильмов?', ''),
+    estimationFilm2 = prompt('На сколько оцените его?', '');
 
 const personalMovieDB = {
     count: numberOfFilms,
-    movies: movies,
-    actors: actors,
-    genres: genres,
+    movies: {},
+    actors: {},
+    genres: [],
     privat: false
 };
 
-movies['logan'] = '8.1';
-movies['latestFilm'] = latestFilm;
-movies['estimationFilm'] = estimationFilm;
-personalMovieDB['movies'] = movies;
-console.log(movies);
+personalMovieDB.movies[latestFilm1] = estimationFilm1;
+personalMovieDB.movies[latestFilm2] = estimationFilm2;
+
 console.log(personalMovieDB);
