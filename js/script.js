@@ -1,55 +1,49 @@
-"use strict";
-let number = 1;
-const mes = 12;
-//alert('В году ' + mes + ' месяцев');
-//const result = confirm('Дела хорошо идут?');
-//const answer = prompt('Вам есть 18?', '18');
-//const answer = +prompt('Вам есть 18?', '18');
-//console.log(typeof(answer));
+/* Задание на урок:
 
-const answers = [];
-answers[0] = prompt('Как Вас зовут?', 'Serg');
-answers[1] = prompt('Как Ваша фамилия?', 'vvv');
-answers[2] = prompt('Сколько Вам лет?', '44');
-//document.write(answers);
-console.log(typeof (answers));
-console.log(typeof (null)); // тоже выводит объект!
-console.log(typeof 42);
-// expected output: "number"
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
 
-console.log(typeof 'blubber');
-// expected output: "string"
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
 
-console.log(typeof true);
-// expected output: "boolean"
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате: 
+    movies: {
+        'logan': '8.1'
+    }
 
-console.log(typeof undeclaredVariable);
-// expected output: "undefined"
+Проверить, чтобы все работало без ошибок в консоли */
 
-const obj = {
-    a: 50
+'use strict';
+let latestFilm,
+    estimationFilm;
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '1');
+latestFilm = prompt('Один из последних просмотренных фильмов?', '1');
+estimationFilm = prompt('На сколько оцените его? от 1 до 5', '0');
+
+console.log(numberOfFilms, latestFilm, estimationFilm);
+const movies = {},
+    actors = {},
+    genres = [];
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: movies,
+    actors: actors,
+    genres: genres,
+    privat: false
 };
 
-obj.a = 10;
-
-console.log(obj);
-
- // Интерполяция - возможность встраивать переменные внутри строки
-
-const category = 'toys';
-//console.log('https://someurl.com/' + category + '')
-console.log(`https://someurl.com/${category}/5`);
-const  user = 'Ivan';
-alert(`Привет, ${user}`);
-
-let incr = 10;
-decr = 10;
-//++incr;
-//--decr;
-
-console.log(incr++);
-console.log(decr--);
-console.log(5 % 2); // остаток от деления
-// && логическое и
-// || логическое или
-// ! отрицание оператор
+movies['logan'] = '8.1';
+movies['latestFilm'] = latestFilm;
+movies['estimationFilm'] = estimationFilm;
+personalMovieDB['movies'] = movies;
+console.log(movies);
+console.log(personalMovieDB);
