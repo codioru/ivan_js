@@ -19,3 +19,6 @@
 - ESLint
 - jshint // установка npm install -g jshint
   - настройки https://jshint.com/docs/options/
+
+https://docs.emmet.io/cheat-sheet/
+https://nikomedvedev.ru/other/vscodeshortcuts/hotkeys.html
