@@ -59,7 +59,7 @@ function rememberMyFilms2() {
         num++;
         console.log(num);
         personalMovieDB.movies[latestFilm] = estimationFilm;
-    };
+    }
 }
 
 function detectPerconalLevel() {
